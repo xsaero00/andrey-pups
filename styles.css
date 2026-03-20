@@ -18,6 +18,9 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
@@ -80,16 +83,19 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-/* Grid Layout for Puppies & Content */
+/* Flex Layout for Puppies & Content */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     margin: 2rem 0;
+    justify-content: center;
 }
 
 /* Puppy Cards */
 .card {
+    flex: 1 1 300px;
+    max-width: 330px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -127,6 +133,9 @@ nav ul li a:hover {
     border-radius: 5px;
     margin-bottom: 15px;
     transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 .btn:hover {
@@ -137,7 +146,7 @@ nav ul li a:hover {
 /* Forms & Pages */
 .page-content {
     padding: 3rem 0;
-    min-height: 60vh;
+    flex-grow: 1;
 }
 
 .form-group {
@@ -147,6 +156,7 @@ nav ul li a:hover {
 .form-group label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .form-group input, .form-group textarea {
@@ -154,6 +164,7 @@ nav ul li a:hover {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-family: inherit;
 }
 
 /* Footer */
